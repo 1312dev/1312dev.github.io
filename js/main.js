@@ -1,4 +1,4 @@
-const tabs=[...document.querySelectorAll('[data-tab]')],subs=[...document.querySelectorAll('[data-sub]')];
+const tabs=[...document.querySelectorAll('[data-tab],[data-ptab]')],subs=[...document.querySelectorAll('[data-sub]')];
 function set(list,el,sel){list.forEach(x=>{const on=x===el&&!x.classList.contains('open');x.classList.toggle('open',on);x.querySelector(sel).setAttribute('aria-expanded',on)})}
 tabs.forEach(t=>t.querySelector(':scope>.head').onclick=()=>set(tabs,t,':scope>.head'));
 subs.forEach(s=>s.querySelector(':scope>.head').onclick=()=>set(subs,s,':scope>.head'));
